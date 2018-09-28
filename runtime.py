@@ -4,7 +4,11 @@ Created on Fri Sep 28 20:18:08 2018
 
 @author: pranay
 """
+import sys
+print("Output from Python")
 
+print("First name: " + sys.argv[1])
+print("Last name: " + sys.argv[2])
 import pyaudio
 import librosa
 import time
@@ -21,6 +25,7 @@ import keras
 from keras.models import load_model
 from keras import backend as K
 import tensorflow as tf
+
 
 
 
@@ -47,6 +52,8 @@ def callback(in_data, frame_count, time_info, flag):
     with graph.as_default():
         index = np.argmax(model.predict(mfccs))
         print(classes[index])
+        sys.stdout.flush()
+
     #ringBuffer.extend(audio_data)
 
     # machine learning model takes wavform as input and
@@ -65,7 +72,7 @@ def callback(in_data, frame_count, time_info, flag):
 stream = p.open(format = pyaudio.paFloat32,
                  channels = 1,
                  rate = 44100,
-                 output = False,
+                 output = True,
                  input = True,
                  stream_callback = callback)
 

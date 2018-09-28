@@ -1,0 +1,23 @@
+{
+  "name": "nodewithpython",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "hk",
+  "license": "ISC",
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "express": "^4.16.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BVPHack/BVP-Server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BVPHack/BVP-Server/issues"
+  },
+  "homepage": "https://github.com/BVPHack/BVP-Server#readme",
+  "description": ""
+}
