@@ -11,9 +11,9 @@ app.listen(3000, function() {
 
 // Function callName() is executed whenever
 // the URL is of the form localhost:3000/name
-app.get('/name', callName);
 
-function callName(req, res) {
+
+function callName() {
 
     // Use child_process.spawn method from
     // child_process module and assign it
@@ -31,13 +31,21 @@ function callName(req, res) {
 
     // Takes stdout data from script which executed
     // with ar9guments and send this data to res object
+    var count =0;
     process.stdout.on('data', function(data) {
-      console.log(data.toString())  
+      console.log(data.toString(),count);
+        
+      if(data.toString() == "noise")
+      {
+          console.log('abc',data.toString())
+      } 
+      
     } )
 
+    
     setTimeout(() => {
         process.kill()
-    },100000000)
+    },20000)
 }
-
+callName()
   
