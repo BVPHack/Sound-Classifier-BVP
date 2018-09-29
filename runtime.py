@@ -50,7 +50,7 @@ def callback(in_data, frame_count, time_info, flag):
     mfccs = np.mean(librosa.feature.mfcc(y=audio_data, sr=22050, n_mfcc=40).T,axis=0) 
     mfccs = np.array(mfccs)
     mfccs = mfccs.reshape((1, 40))
-    time.sleep(4)
+    time.sleep(1)
     with graph.as_default():
         index = np.argmax(model.predict(mfccs))
         #print(classes[index])
@@ -90,7 +90,7 @@ def callback(in_data, frame_count, time_info, flag):
        # requests.get("http://127.0.0.1:8082/goal")
     
 
-    return (in_data, pyaudio.paContinue)
+    return (in_data, pyaudio.paContinue)+
 
 # function that finds the index of the Soundflower
 # input device and HDMI output device
