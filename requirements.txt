@@ -1,0 +1,7 @@
+pyaudio
+librosa
+sinchsms
+tensorflow
+keras
+pandas
+glob
